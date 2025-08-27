@@ -140,7 +140,7 @@ namespace _1_AdoNetCustomerProject
                 command.ExecuteNonQuery();
                 sqlConnection.Close();
                 MessageBox.Show(
-                "Müşteri başarıyla eklendi!",
+                "Müşteri başarıyla eklendi!!",
                 "Başarılı",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
