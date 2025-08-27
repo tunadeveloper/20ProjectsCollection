@@ -85,7 +85,7 @@ namespace _2_EntityFrameworkProductManagementProject
                 db.Product.Remove(values);
                 db.SaveChanges();
                 MessageBox.Show(
-                   "Ürün başarıyla silindi!",
+                   "Ürün başarıyla silindi!!",
                    "Başarılı",
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
