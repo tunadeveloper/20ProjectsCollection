@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _1_AdoNetCustomerProject
+namespace _2_EntityFrameworkProductManagementProject
 {
     public partial class FrmMap : Form
     {
@@ -17,16 +17,16 @@ namespace _1_AdoNetCustomerProject
             InitializeComponent();
         }
 
-        private void btnCityOps_Click(object sender, EventArgs e)
+        private void btnProduct_Click(object sender, EventArgs e)
         {
-            FrmCity frmCity = new FrmCity();
-            frmCity.Show();
+            FrmProduct frmProduct = new FrmProduct();
+            frmProduct.Show();
         }
 
-        private void btnCustomerOps_Click(object sender, EventArgs e)
+        private void btnCategory_Click(object sender, EventArgs e)
         {
-            FrmCustomer frmCustomer = new FrmCustomer();
-            frmCustomer.Show();
+            FrmCategory frmCategory = new FrmCategory();
+            frmCategory.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

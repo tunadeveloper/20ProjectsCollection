@@ -1,4 +1,4 @@
-﻿namespace _1_AdoNetCustomerProject
+﻿namespace _2_EntityFrameworkProductManagementProject
 {
     partial class FrmMap
     {
@@ -33,8 +33,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnCustomerOps = new System.Windows.Forms.Button();
-            this.btnCityOps = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +55,11 @@
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.lblSubtitle.Location = new System.Drawing.Point(41, 79);
+            this.lblSubtitle.Location = new System.Drawing.Point(54, 87);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(409, 21);
+            this.lblSubtitle.Size = new System.Drawing.Size(273, 21);
             this.lblSubtitle.TabIndex = 1;
-            this.lblSubtitle.Text = "Hızlı erişim: şehir ve müşteri işlemleri ile oturum yönetimi";
+            this.lblSubtitle.Text = "Hızlı erişim: ürün ve kategori yönetimi";
             // 
             // lblTitle
             // 
@@ -76,8 +76,8 @@
             // 
             this.panelButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.panelButtons.Controls.Add(this.btnExit);
-            this.panelButtons.Controls.Add(this.btnCustomerOps);
-            this.panelButtons.Controls.Add(this.btnCityOps);
+            this.panelButtons.Controls.Add(this.btnCategory);
+            this.panelButtons.Controls.Add(this.btnProduct);
             this.panelButtons.Location = new System.Drawing.Point(72, 162);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(350, 260);
@@ -98,35 +98,35 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnCustomerOps
+            // btnCategory
             // 
-            this.btnCustomerOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnCustomerOps.FlatAppearance.BorderSize = 0;
-            this.btnCustomerOps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerOps.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCustomerOps.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerOps.Location = new System.Drawing.Point(25, 120);
-            this.btnCustomerOps.Name = "btnCustomerOps";
-            this.btnCustomerOps.Size = new System.Drawing.Size(300, 50);
-            this.btnCustomerOps.TabIndex = 1;
-            this.btnCustomerOps.Text = "👥 Müşteri İşlemleri";
-            this.btnCustomerOps.UseVisualStyleBackColor = false;
-            this.btnCustomerOps.Click += new System.EventHandler(this.btnCustomerOps_Click);
+            this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnCategory.FlatAppearance.BorderSize = 0;
+            this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnCategory.ForeColor = System.Drawing.Color.White;
+            this.btnCategory.Location = new System.Drawing.Point(25, 120);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(300, 50);
+            this.btnCategory.TabIndex = 1;
+            this.btnCategory.Text = "🏷️ Kategori İşlemleri";
+            this.btnCategory.UseVisualStyleBackColor = false;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
-            // btnCityOps
+            // btnProduct
             // 
-            this.btnCityOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCityOps.FlatAppearance.BorderSize = 0;
-            this.btnCityOps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCityOps.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCityOps.ForeColor = System.Drawing.Color.White;
-            this.btnCityOps.Location = new System.Drawing.Point(25, 60);
-            this.btnCityOps.Name = "btnCityOps";
-            this.btnCityOps.Size = new System.Drawing.Size(300, 50);
-            this.btnCityOps.TabIndex = 0;
-            this.btnCityOps.Text = "🏙️ Şehir İşlemleri";
-            this.btnCityOps.UseVisualStyleBackColor = false;
-            this.btnCityOps.Click += new System.EventHandler(this.btnCityOps_Click);
+            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnProduct.ForeColor = System.Drawing.Color.White;
+            this.btnProduct.Location = new System.Drawing.Point(25, 60);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(300, 50);
+            this.btnProduct.TabIndex = 0;
+            this.btnProduct.Text = "🛍️ Ürün İşlemleri";
+            this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // FrmMap
             // 
@@ -153,8 +153,8 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Panel panelButtons;
-        private System.Windows.Forms.Button btnCityOps;
-        private System.Windows.Forms.Button btnCustomerOps;
+        private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Button btnExit;
     }
 }
