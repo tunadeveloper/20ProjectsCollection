@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-EntityFrameworkProductMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-EntityFrameworkStatisticsProject", "3-EntityFrameworkStatisticsProject\3-EntityFrameworkStatisticsProject.csproj", "{3CA4827E-D312-4C10-BCD3-E4E364C2A297}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-EntityFrameworkCodeFirstMovieProject", "4-EntityFrameworkCodeFirstMovieProject\4-EntityFrameworkCodeFirstMovieProject.csproj", "{5EC14E1E-540D-4A4B-A608-5220AD16BE0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC14E1E-540D-4A4B-A608-5220AD16BE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC14E1E-540D-4A4B-A608-5220AD16BE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC14E1E-540D-4A4B-A608-5220AD16BE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC14E1E-540D-4A4B-A608-5220AD16BE0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

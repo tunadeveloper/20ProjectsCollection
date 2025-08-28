@@ -134,5 +134,6 @@ namespace _2_EntityFrameworkProductManagementProject
                 MessageBox.Show("Kategori aranırken bir hata oluştu!: " + ex.Message);
             }
         }
+
     }
 }
