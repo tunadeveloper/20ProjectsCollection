@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-AdoNetCustomerProject", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-EntityFrameworkProductManagementProject", "2-EntityFrameworkProductManagementProject\2-EntityFrameworkProductManagementProject.csproj", "{1A1BCBC2-92AF-4BEB-94CF-8822C661BC68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-EntityFrameworkStatisticsProject", "3-EntityFrameworkStatisticsProject\3-EntityFrameworkStatisticsProject.csproj", "{3CA4827E-D312-4C10-BCD3-E4E364C2A297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1A1BCBC2-92AF-4BEB-94CF-8822C661BC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1BCBC2-92AF-4BEB-94CF-8822C661BC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1BCBC2-92AF-4BEB-94CF-8822C661BC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA4827E-D312-4C10-BCD3-E4E364C2A297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
