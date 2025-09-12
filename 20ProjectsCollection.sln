@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-MailRegisterProject", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-KaggleDatasetProject", "17-KaggleDatasetProject\17-KaggleDatasetProject.csproj", "{F89BFF23-15D5-4B11-A3F8-9BE6395D47CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-SuperStoreDatasetStatsProject", "18-SuperStoreDatasetStatsProject\18-SuperStoreDatasetStatsProject.csproj", "{D8F0B37A-E0CC-4B62-831D-5389EC155E01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{F89BFF23-15D5-4B11-A3F8-9BE6395D47CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89BFF23-15D5-4B11-A3F8-9BE6395D47CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89BFF23-15D5-4B11-A3F8-9BE6395D47CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F0B37A-E0CC-4B62-831D-5389EC155E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F0B37A-E0CC-4B62-831D-5389EC155E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F0B37A-E0CC-4B62-831D-5389EC155E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F0B37A-E0CC-4B62-831D-5389EC155E01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
