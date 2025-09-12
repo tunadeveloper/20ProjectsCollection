@@ -27,7 +27,6 @@ namespace _16_MailRegisterProject
             Random random = new Random();
             int confirmCode = random.Next(100000, 1000000);
 
-            // 4. Kullanıcı nesnesi oluştur
             Users user = new Users
             {
                 Email = txtEmail.Text.Trim(),
@@ -41,7 +40,6 @@ namespace _16_MailRegisterProject
             context.Users.Add(user);
             context.SaveChanges();
 
-            // 5. Mail gönder
             MimeMessage mimeMessage = new MimeMessage();
             mimeMessage.From.Add(new MailboxAddress("AdminRegister", "tunabusiness25@gmail.com"));
             mimeMessage.To.Add(new MailboxAddress("User", txtEmail.Text));
@@ -80,9 +78,6 @@ namespace _16_MailRegisterProject
     MessageBoxButtons.OK,
     MessageBoxIcon.Information
 );
-
-
-            // 6. Aktivasyon formunu aç
             FrmMailConfirm frm = new FrmMailConfirm
             {
                 email = txtEmail.Text
@@ -91,74 +86,3 @@ namespace _16_MailRegisterProject
         }
     }
 }
-
-
-
-//namespace _16_MailRegisterProject
-//{
-//    public partial class FrmRegister : Form
-//    {
-//        public FrmRegister()
-//        {
-//            InitializeComponent();
-//        }
-//        MailRegisterEntities context = new MailRegisterEntities();
-//        private void btnRegister_Click(object sender, EventArgs e)
-//        {
-//            Random random = new Random();
-//            int confirm = random.Next(100000, 1000000);
-
-//            Users users = new Users();
-//            users.FirstName = txtFirstName.Text;
-//            users.LastName = txtLastName.Text;
-//            users.Email = txtEmail.Text;
-//            users.UserPassword = txtPassword.Text;
-//            users.IsConfirm = false;
-//            users.ConfirmCode = confirm.ToString();
-
-//            context.Users.Add(users);
-//            context.SaveChanges();
-
-//            #region Mail
-
-//            MimeMessage mimeMessage = new MimeMessage();
-//            string mail = "tunabusiness25@gmail.com";
-//            MailboxAddress mailboxAddressFrom = new MailboxAddress("AdminRegister", mail);
-//            mimeMessage.From.Add(mailboxAddressFrom);
-
-//            MailboxAddress mailboxAdressTo = new MailboxAddress("User", txtEmail.Text);
-//            mimeMessage.To.Add(mailboxAdressTo);
-
-//            var bodyBuilder = new BodyBuilder();
-//            bodyBuilder.HtmlBody = $@"
-//<html>
-//<body style='font-family:Arial,sans-serif;'>
-//    <h2 style='color:#4A148C;'>Merhaba,</h2>
-//    <p>Uygulamamıza kaydınızı tamamlamak için aşağıdaki aktivasyon kodunu kullanabilirsiniz:</p>
-//    <h1 style='color:#FF5722;'>{confirm}</h1>
-//    <p>Lütfen kodu uygulamada ilgili alana girerek hesabınızı aktif hale getirin.</p>
-//    <p style='font-size:smaller;color:gray;'>Eğer bu işlemi siz yapmadıysanız, lütfen bu maili dikkate almayın.</p>
-//    <p>Teşekkürler,<br/><strong>Tunahan Cengiz</strong></p>
-//</body>
-//</html>
-//";
-//            mimeMessage.Body = bodyBuilder.ToMessageBody();
-
-
-//            mimeMessage.Subject = "Hesap Aktivasyon Kodu";
-
-//            SmtpClient smtpClient = new SmtpClient();
-//            smtpClient.Connect("smtp.gmail.com", 587, false);
-//            smtpClient.Authenticate(mail, "yxefmhsoszmxvibu");
-//            smtpClient.Send(mimeMessage);
-//            smtpClient.Disconnect(true);
-
-//            MessageBox.Show("E-Posta Adresinize Onay Kodu Gönderildi");
-//            FrmMailConfirm frmMailConfirm = new FrmMailConfirm();
-//            frmMailConfirm.email = txtEmail.Text;
-//            frmMailConfirm.Show();
-
-//            #endregion
-//        }
-//    }
-//}
