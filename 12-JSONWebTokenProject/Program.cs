@@ -16,7 +16,7 @@ namespace _12_JSONWebTokenProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTokenGenerator());
+            Application.Run(new FrmLogin());
         }
     }
 }
