@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-SuperStoreDatasetStatsPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-RestaurantTableCurrentStatusProject", "19-RestaurantTableCurrentStatusProject\19-RestaurantTableCurrentStatusProject.csproj", "{FDD9A4C7-C663-4A21-9EB2-36610078BC9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-OllamaAIChatProject", "20-OllamaAIChatProject\20-OllamaAIChatProject.csproj", "{67704E21-D607-46C3-B8F8-5922774E23C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{FDD9A4C7-C663-4A21-9EB2-36610078BC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD9A4C7-C663-4A21-9EB2-36610078BC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD9A4C7-C663-4A21-9EB2-36610078BC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67704E21-D607-46C3-B8F8-5922774E23C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67704E21-D607-46C3-B8F8-5922774E23C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67704E21-D607-46C3-B8F8-5922774E23C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67704E21-D607-46C3-B8F8-5922774E23C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
