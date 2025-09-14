@@ -25,74 +25,91 @@ namespace _15_RapidAPIGasPriceSimulationProject
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            gasAmount = Convert.ToDouble(txtFuelAmount.Text);
-            dieselAmount = Convert.ToDouble(txtFuelAmount.Text);
-            lpgAmount = Convert.ToDouble(txtFuelAmount.Text);
+            double amount = 0;
+            double pricePerLitre = 0;
+
+            if (rdbGasoline.Checked)
+            {
+                amount = Convert.ToDouble(txtFuelAmount.Text);
+                pricePerLitre = gasolinePrice;
+            }
+            else if (rdbDiesel.Checked)
+            {
+                amount = Convert.ToDouble(txtFuelAmount.Text);
+                pricePerLitre = dieselPrice;
+            }
+            else if (rdbLpg.Checked)
+            {
+                amount = Convert.ToDouble(txtFuelAmount.Text);
+                pricePerLitre = lpgPrice;
+            }
+
+            totalPrice = amount * pricePerLitre;
+
+            progressBar1.Value = 0;
+            timer1.Interval = 10;
+            int steps = 100;
+            double stepValue = totalPrice / steps;
+
+            int currentStep = 0;
+            timer1.Tick += (s, ev) =>
+            {
+                if (currentStep < steps)
+                {
+                    txtTotalPrice.Text = ((currentStep + 1) * stepValue).ToString("0.00") + " ₺";
+                    progressBar1.Value = currentStep + 1;
+                    currentStep++;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
+            };
+
             timer1.Start();
-            timer1.Interval = 100;
         }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Text = count.ToString();
             if (rdbGasoline.Checked)
             {
-                count++;
-                if (count <= gasAmount)
+                if (count < gasAmount)
                 {
                     totalPrice += gasolinePrice;
+                    count++;
                     txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
+                    progressBar1.Value = Math.Min((int)(count / gasAmount * 100), 100);
                 }
                 else
-                {
-                    txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
-                }
-
-                progressBar1.Value += 1;
-                if(progressBar1.Value == 99)
                 {
                     timer1.Stop();
                 }
             }
-
-            if (rdbDiesel.Checked)
+            else if (rdbDiesel.Checked)
             {
-                count++;
-                if (count <= dieselAmount)
+                if (count < dieselAmount)
                 {
                     totalPrice += dieselPrice;
+                    count++;
                     txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
+                    progressBar1.Value = Math.Min((int)(count / dieselAmount * 100), 100);
                 }
                 else
-                {
-                    txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
-                }
-
-
-                progressBar1.Value += 1;
-                if (progressBar1.Value == 99)
                 {
                     timer1.Stop();
                 }
             }
-
-            if (rdbLpg.Checked)
+            else if (rdbLpg.Checked)
             {
-                count++;
-                if (count <= lpgAmount)
+                if (count < lpgAmount)
                 {
                     totalPrice += lpgPrice;
+                    count++;
                     txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
+                    progressBar1.Value = Math.Min((int)(count / lpgAmount * 100), 100);
                 }
                 else
-                {
-                    txtTotalPrice.Text = totalPrice.ToString("0.00") + " ₺";
-                }
-
-
-                progressBar1.Value += 1;
-                if (progressBar1.Value == 99)
                 {
                     timer1.Stop();
                 }
@@ -101,38 +118,43 @@ namespace _15_RapidAPIGasPriceSimulationProject
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
+            try
             {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://akaryakit-fiyatlari.p.rapidapi.com/fuel/istanbul/"),
-                Headers =
-        {
-            { "x-rapidapi-key", "630ce9cc86msh271c60cffe62d5ep1b514djsn0fe292593744" },
-            { "x-rapidapi-host", "akaryakit-fiyatlari.p.rapidapi.com" },
-        },
-            };
-
-            using (var response = await client.SendAsync(request))
+                var client = new HttpClient();
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri("https://gas-price.p.rapidapi.com/canada"),
+                    Headers =
             {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                var json = JObject.Parse(body);
+                { "x-rapidapi-key", "e71177d867mshfa37763bf5e2e10p1b4212jsn34b1dc08d068" },
+                { "x-rapidapi-host", "gas-price.p.rapidapi.com" },
+            },
+                };
 
-                var gasolineJsonValue = json["data"][16]["prices"][0]["benzin"];
-                var dieselJsonValue = json["data"][16]["prices"][0]["motorin"];
-                var lpgJsonValue = json["data"][16]["prices"][0]["lpg"];
+                using (var response = await client.SendAsync(request))
+                {
+                    response.EnsureSuccessStatusCode();
+                    var body = await response.Content.ReadAsStringAsync();
+                    var json = JObject.Parse(body);
 
-                gasolinePrice = double.Parse(gasolineJsonValue.ToString());
-                dieselPrice = double.Parse(dieselJsonValue.ToString());
-                lpgPrice = double.Parse(lpgJsonValue.ToString());
+                    var calgary = json["result"][0]["cities"][0];
+                    double gasolineCad = double.Parse(calgary["gasoline"].ToString(), CultureInfo.InvariantCulture);
 
-                txtGasolinePrice.Text = gasolineJsonValue.ToString() + " ₺";
-                txtDieselPrice.Text = dieselJsonValue.ToString() + " ₺";
-                txtLpgPrice.Text = lpgJsonValue.ToString() + " ₺";
+                    double cadToTry = 20;
+                    gasolinePrice = gasolineCad * cadToTry;
+                    dieselPrice = gasolinePrice * 0.9;
+                    lpgPrice = gasolinePrice * 0.5;
+
+                    txtGasolinePrice.Text = gasolinePrice.ToString("0.00") + " ₺";
+                    txtDieselPrice.Text = dieselPrice.ToString("0.00") + " ₺";
+                    txtLpgPrice.Text = lpgPrice.ToString("0.00") + " ₺";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyatları alırken hata oluştu: " + ex.Message);
             }
         }
-
-
     }
 }
