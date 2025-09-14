@@ -168,7 +168,7 @@ Bire bir, bire çok ve çoka çok ilişkileri SQL üzerinde uygulayan veri model
 
 ### 🔹 [15. RapidAPIGasPriceSimulationProject](./15-RapidAPIGasPriceSimulationProject)  
 Güncel akaryakıt fiyatlarını kullanarak simülasyon ve fiyat hesaplamaları sağlayan uygulama.  
-<br>
+
 https://github.com/user-attachments/assets/4aa4f695-437d-4975-9980-4cbd0ba98505
 
 ---
@@ -199,12 +199,12 @@ Dashboard ve grafiklerle veri görselleştirme sağlayan modern istatistik uygul
 
 ### 🔹 [19. RestaurantTableCurrentStatusProject](./19-RestaurantTableCurrentStatusProject)  
 Restoran masalarının anlık doluluk durumlarını gösteren Windows Forms uygulaması.  
-<br>
+
 https://github.com/user-attachments/assets/20115c9b-2966-44a2-86d3-a56d2f308d9b
 
 ---
 
 ### 🔹 [20. OllamaAIChatProject](./20-OllamaAIChatProject)  
 Console ile yerel AI Chat uygulaması, Ollama phi3:mini entegrasyonu ve streaming yanıt desteğiyle yapay zeka deneyimi sunar.
-<br>
+
 https://github.com/user-attachments/assets/727adbf2-12b7-480a-85d0-b5b8c59a4d61
