@@ -41,7 +41,7 @@ Amacım, **farklı veri tabanları, ORM araçları, API tüketimi ve modern .NET
 - **Kimlik Doğrulama:** JWT (Json Web Token)  
 - **Veri Analizi:** Kaggle Datasets, Chart Controls  
 - **AI:** Ollama AI (phi3:mini modeli)  
-- **Diğer:** MailKit, MimeKit, Kaggle
+- **Diğer:** MailKit, MimeKit
 
 ---
 
